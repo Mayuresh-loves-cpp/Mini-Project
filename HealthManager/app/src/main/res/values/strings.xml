@@ -28,4 +28,8 @@
     <string name="last_name">Last Name</string>
     <string name="create_new_password">Create New Password</string>
     <string name="create_one">Create One</string>
+    <string name="take_survey">Take Survey</string>
+    <string name="appointments">Appointments</string>
+    <string name="referred_medicines">Referred Medicines</string>
+    <string name="predict_health_issues">Predict Health Issues</string>
 </resources>
