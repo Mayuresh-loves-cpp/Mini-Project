@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -123,6 +124,8 @@ public class TakeSurvey extends Fragment {
                 editor.putString("symptom3", thirdSymptom);
                 editor.putString("symptom4", fourthSymptom);
                 editor.commit();
+                Toast.makeText(getActivity(), "Data Saved!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Go and find your results in health issues section", Toast.LENGTH_SHORT).show();
             }
         });
         return v;

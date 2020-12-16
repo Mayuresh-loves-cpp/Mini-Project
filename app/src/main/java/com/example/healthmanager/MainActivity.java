@@ -31,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setupDrawerContent(nvDrawer);
+        Class fragmentClass;
+        Fragment myFragment = null;
+        fragmentClass = Home.class;
+        try {
+            myFragment = (Fragment) fragmentClass.newInstance();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flcontent, myFragment).commit();
     }
 
     @Override
@@ -44,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
     public void selectDrawerItem(MenuItem menuItem){
         Fragment myFragment = null;
         Class fragmentClass;
-        TextView textView = findViewById(R.id.txthome);
-        textView.setVisibility(View.GONE);
+        //TextView textView = findViewById(R.id.txthome);
+        //textView.setVisibility(View.GONE);
         switch (menuItem.getItemId()){
             case  R.id.homeScreen : fragmentClass = Home.class;
                 break;
