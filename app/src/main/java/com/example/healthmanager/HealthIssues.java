@@ -99,22 +99,22 @@ public class HealthIssues extends Fragment {
         String thirdSymptom = sharedPreferences.getString("symptom3", "");
         String fourthSymptom = sharedPreferences.getString("symptom4", "");
         Search s = new Search();
-        if (firstSymptom != null){
+        if (firstSymptom != null && !firstSymptom.equals("")){
             System.out.println("1st symptom was: " + firstSymptom);
             s.clearSymptomList();
             s.searchDisease(firstSymptom);
         }
-        if (secondSymptom != null){
+        if (secondSymptom != null && !secondSymptom.equals("")){
             System.out.println("2nd symptom was: " + secondSymptom);
             s.clearSymptomList();
             s.searchDisease(secondSymptom);
         }
-        if (thirdSymptom != null){
+        if (thirdSymptom != null && !thirdSymptom.equals("")){
             System.out.println("3rd symptom was: " + thirdSymptom);
             s.clearSymptomList();
             s.searchDisease(thirdSymptom);
         }
-        if (firstSymptom != null){
+        if (firstSymptom != null && !fourthSymptom.equals("")){
             System.out.println("4th symptom was: " + fourthSymptom);
             s.clearSymptomList();
             s.searchDisease(fourthSymptom);

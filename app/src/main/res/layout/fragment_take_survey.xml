@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TakeSurvey">
 
     <!-- TODO: Update blank fragment layout -->
@@ -31,7 +32,7 @@
                 android:layout_marginLeft="7dp"
                 android:layout_marginRight="7dp"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="@color/cardview_light_background">
+                app:cardBackgroundColor="?attr/cardBackgroundColor">
 
 
                 <TextView
@@ -41,7 +42,8 @@
                     android:layout_marginTop="8dp"
                     android:text="Provide us with your age"
                     android:textAlignment="center"
-                    android:textSize="18dp" />
+                    android:textSize="18dp"
+                    android:shadowColor="?attr/cardBackgroundColor"/>
 
                 <EditText
                     android:layout_width="75dp"
@@ -58,7 +60,7 @@
                 android:layout_marginLeft="7dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="7dp"
-                android:backgroundTint="@color/cardview_light_background">
+                app:cardBackgroundColor="?attr/cardBackgroundColor">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -85,8 +87,7 @@
                 android:layout_marginLeft="7dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="7dp"
-                android:backgroundTint="@color/cardview_light_background">
-
+                app:cardBackgroundColor="?attr/cardBackgroundColor">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -145,8 +146,7 @@
                 android:layout_marginLeft="7dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="7dp"
-                android:backgroundTint="@color/cardview_light_background">
-
+                app:cardBackgroundColor="?attr/cardBackgroundColor">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -172,8 +172,7 @@
                 android:layout_marginLeft="7dp"
                 android:layout_marginRight="7dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/cardview_light_background">
-
+                app:cardBackgroundColor="?attr/cardBackgroundColor">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -182,7 +181,7 @@
                     android:layout_marginTop="8dp"
                     android:text="Tell us your symptoms"
                     android:textAlignment="center"
-                    android:textSize="18dp" />
+                    android:textSize="18dp"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -192,6 +191,7 @@
                     android:layout_marginTop="33dp"
                     android:hint="symptom 1"
                     android:id="@+id/symptom1"
+                    android:backgroundTint="@color/teal_200"
                     android:inputType="textAutoCorrect"
                     android:text="" />
 
@@ -203,6 +203,7 @@
                     android:layout_marginTop="76dp"
                     android:hint="symptom 2"
                     android:id="@+id/symptom2"
+                    android:backgroundTint="@color/teal_200"
                     android:inputType="textAutoCorrect"
                     android:text="" />
 
@@ -214,6 +215,7 @@
                     android:layout_marginTop="119dp"
                     android:hint="symptom 3"
                     android:id="@+id/symptom3"
+                    android:backgroundTint="@color/teal_200"
                     android:inputType="textAutoCorrect"
                     android:text="" />
 
@@ -222,9 +224,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
+                    android:layout_marginBottom="7dp"
                     android:layout_marginTop="162dp"
                     android:hint="symptom 4"
                     android:id="@+id/symptom4"
+                    android:backgroundTint="@color/teal_200"
                     android:inputType="textAutoCorrect"
                     android:text="" />
             </androidx.cardview.widget.CardView>
