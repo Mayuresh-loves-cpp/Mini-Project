@@ -12,7 +12,8 @@
         android:layout_height="match_parent"
         android:paddingStart="10dp"
         android:text="About"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        android:layout_marginLeft="7dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -20,6 +21,7 @@
         android:text="Health Manager\nVersion 1.0"
         android:paddingStart="10dp"
         android:paddingTop="50dp"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        android:layout_marginLeft="7dp"/>
 
 </FrameLayout>

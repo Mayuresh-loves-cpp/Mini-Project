@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,36 +93,45 @@ public class Home extends Fragment {
                 "this is health manager"
         ));
         homeScreenContentList.add(new HomeScreenContent(
-                "Tip1",
-                "Tip1 Description"
+                "Clean hands, healthy space.",
+                "Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water. This eliminates germs including viruses that may be on your hands."
         ));
         homeScreenContentList.add(new HomeScreenContent(
-                "Tip2",
-                "Tip2 Description"
+                "Safe food, good life.",
+                "Eat a variety of nutrient-rich foods. Your body needs more than 40 different nutrients for good health."
         ));
         homeScreenContentList.add(new HomeScreenContent(
-                "Tip3",
-                "Tip3 Description"
+                "Take a Vitamin D3 if you don't get much Sun exposure",
+                "Sunlight is a great source of vitamin D most people don't get enough Sun exposure in fact about 41.6 % of the US population is a deficient in this critical vitamin.  if you are unable to get adequate Sun exposure vitamin D supplement are a good alternative. \n" +
+                        "\n" +
+                        "Benefits include improve bone health increase strength reduce symptoms of a depression and lower risk of Cancer vitamin D may also help you to live longer"
         ));
         homeScreenContentList.add(new HomeScreenContent(
-                "Tip4",
-                "Tip4 Description"
+                "Avoid Bright light before sleep",
+                "When you're  exposed  to bright light in the evening,  it may disrupt your production of the sleep hormones  melatonin.\n" +
+                        "\n" +
+                        "One strategy is to use a pair of armed Titan Glass that block blue light rays from entering your eyes in the evening."
         ));
         homeScreenContentList.add(new HomeScreenContent(
-                "Tip5",
-                "Tip5 Description"
+                "Breath in, breath out",
+                "Deep breathing is body's one of the strongest self-healing tools. It lowers blood pressure, reduces heart rate, decreases stress hormones, oxygenates blood, exercises the lungs and improves immunity."
         ));
         homeScreenContentList.add(new HomeScreenContent(
-                "Tip6",
-                "Tip6 Description"
+                "Cardamom tea",
+                "If you are suffering from stress, eating cardamom or making tea and drinking it completely changes your brain hormones and makes you feel refreshed."
         ));
         homeScreenContentList.add(new HomeScreenContent(
-                "Tip7",
-                "Tip7 Description"
+                "Make sure to eat enough protein!",
+                "Eating enough protein is a vital for optimal health , what's more , this nutrient is a particularly important for weight loss high protein intake can boost the metabolism significantly while making you feel full  enough to automatically it fewer calories. It can also reduce the craving and your desire to snack late at night sufficient protein intake has also been through to shown to lower blood sugar and blood pressure levels"
         ));
         homeScreenContentList.add(new HomeScreenContent(
-                "Tip8",
-                "Tip8 Description"
+                "Don't go on long term diet !",
+                "Diet are the rarely work well in the long term. Dieting is one of the strongest predictors for a future weight gain.\n" +
+                        "\n" +
+                        "Instead of going on diet , try adopting a Healthy lifestyle focus on the nourishing your body instead of depriving it. \n" +
+                        "Weight loss should follow as you transition to whole, nutrition foods"
         ));
+
+        Toast.makeText(getActivity(), "Some Health Tips for you!", Toast.LENGTH_LONG).show();
     }
 }

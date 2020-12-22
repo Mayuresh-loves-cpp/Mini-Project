@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/homeScreen" android:title="Home Screen"/>
-    <item android:id="@+id/takesurvey" android:title="Take Survey" />
-    <item android:id="@+id/predictissues" android:title="Predict Health Issues" />
-    <item android:id="@+id/settings" android:title="Settings" />
-    <item android:id="@+id/help" android:title="Help" />
-    <item android:id="@+id/about" android:title="About" />
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeScreen"
+        android:title="Home Screen"
+        tools:ignore="HardcodedText" />
+    <item android:id="@+id/takesurvey"
+        android:title="Take Survey"
+        tools:ignore="HardcodedText" />
+    <item android:id="@+id/predictissues"
+        android:title="Predict Health Issues"
+        tools:ignore="HardcodedText" />
+    <item android:id="@+id/settings"
+        android:title="Settings"
+        tools:ignore="HardcodedText" />
+    <item android:id="@+id/help"
+        android:title="Help"
+        tools:ignore="HardcodedText" />
+    <item android:id="@+id/about"
+        android:title="About"
+        tools:ignore="HardcodedText" />
 </menu>
