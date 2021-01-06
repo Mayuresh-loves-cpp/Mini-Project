@@ -7,12 +7,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import android.net.Network;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -31,9 +28,8 @@ public class MainActivity extends AppCompatActivity {
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setupDrawerContent(nvDrawer);
-        Class fragmentClass;
         Fragment myFragment = null;
-        fragmentClass = Home.class;
+        Class<Home> fragmentClass = Home.class;
         try {
             myFragment = (Fragment) fragmentClass.newInstance();
         }
@@ -52,14 +48,13 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void selectDrawerItem(MenuItem menuItem){
         Fragment myFragment = null;
         Class fragmentClass;
         //TextView textView = findViewById(R.id.txthome);
         //textView.setVisibility(View.GONE);
         switch (menuItem.getItemId()){
-            case  R.id.homeScreen : fragmentClass = Home.class;
-                break;
             case R.id.takesurvey : fragmentClass = TakeSurvey.class;
                 break;
             case R.id.predictissues : fragmentClass = HealthIssues.class;
@@ -87,12 +82,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupDrawerContent(NavigationView navigationView){
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                selectDrawerItem(item);
-                return true;
-            }
+        navigationView.setNavigationItemSelectedListener(item -> {
+            selectDrawerItem(item);
+            return true;
         });
     }
 }

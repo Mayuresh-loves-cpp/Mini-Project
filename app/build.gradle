@@ -3,6 +3,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        'Health Manager' {
+            storeFile file('C:\\Users\\Mayuresh\\Health Manager\\Health Manager.jks')
+            storePassword 'healthmanager'
+            keyPassword 'healthmanager'
+            keyAlias 'Health Manager'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -14,6 +22,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.'Health Manager'
     }
 
     buildTypes {

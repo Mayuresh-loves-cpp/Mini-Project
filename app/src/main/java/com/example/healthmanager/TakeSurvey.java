@@ -34,9 +34,6 @@ public class TakeSurvey extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
     private EditText Symptom1, Symptom2,Symptom3, Symptom4;
     public TakeSurvey() {
         // Required empty public constructor
@@ -64,8 +61,7 @@ public class TakeSurvey extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            // TODO: Rename and change types of parameters
         }
     }
 
@@ -74,13 +70,15 @@ public class TakeSurvey extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+        SharedPreferences sp = getActivity().getSharedPreferences("surveyData", Context.MODE_PRIVATE);
+
         View v = inflater.inflate(R.layout.fragment_take_survey, container, false);
 
         Spinner contactSpinnerView = (Spinner) v.findViewById(R.id.contactSpinner);
 
         String[] contactsItem = getResources().getStringArray(contactTypes);
 
-        ArrayAdapter<String> contactTypesAdapter = new ArrayAdapter<String>(
+        ArrayAdapter<String> contactTypesAdapter = new ArrayAdapter<>(
                 getActivity(), android.R.layout.simple_list_item_1, contactsItem
         );
         contactTypesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -93,40 +91,22 @@ public class TakeSurvey extends Fragment {
         Symptom4 = v.findViewById(R.id.symptom4);
         Button savedataButton = (Button) v.findViewById(R.id.save_data);
 
-        savedataButton.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("CommitPrefEdits")
-            @Override
-            public void onClick(View v) {
-                /*Bundle bundle = new Bundle();
-                bundle.putString("s1", firstSymptom);
-                bundle.putString("s2", secondSymptom);
-                bundle.putString("s3", thirdSymptom);
-                bundle.putString("s4", fourthSymptom);
+        savedataButton.setOnClickListener(v1 -> {
+            String firstSymptom = Symptom1.getText().toString();
+            String secondSymptom = Symptom2.getText().toString();
+            String thirdSymptom = Symptom3.getText().toString();
+            String fourthSymptom = Symptom4.getText().toString();
 
-                FragmentManager fragmentManager;
-                fragmentManager = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                HealthIssues healthIssues = new HealthIssues();
-                healthIssues.setArguments(bundle);
-                fragmentTransaction.replace(R.id.healthIssueFragment, healthIssues);
-                fragmentTransaction.commit();*/
-                String firstSymptom = Symptom1.getText().toString();
-                String secondSymptom = Symptom2.getText().toString();
-                String thirdSymptom = Symptom3.getText().toString();
-                String fourthSymptom = Symptom4.getText().toString();
-
-                SharedPreferences sp = getActivity().getSharedPreferences("surveyData", Context.MODE_PRIVATE);
-                @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor;
-                editor = sp.edit();
-                editor.putString("symptom1", firstSymptom);
-                editor.putString("symptom2", secondSymptom);
-                editor.putString("symptom3", thirdSymptom);
-                editor.putString("symptom4", fourthSymptom);
-                editor.commit();
-                Toast.makeText(getActivity(), "Data Saved!", Toast.LENGTH_SHORT).show();
-                Toast.makeText(getActivity(), "Go and find your results in health issues section", Toast.LENGTH_SHORT).show();
-            }
+            @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor;
+            editor = sp.edit();
+            editor.putString("symptom1", firstSymptom);
+            editor.putString("symptom2", secondSymptom);
+            editor.putString("symptom3", thirdSymptom);
+            editor.putString("symptom4", fourthSymptom);
+            editor.apply();
+            Toast.makeText(getActivity(), "Data Saved!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Go and find your results in health issues section", Toast.LENGTH_SHORT).show();
         });
         return v;
     }
